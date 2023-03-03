@@ -34,7 +34,3 @@ function initApp(data: ITours[]): void{
 -   создать метод initApp который будет здесь вызываться, в теле метода добавить эти импортированные методы
     - Указать в методах возвращающие типы, типы для параметров, в теле функции также указать типы чтобы не было ошибок
 */
-
-// перенес всё в app>servicees>general>general.ts
-// import initToursDivElements
-// import initTourElemListener
