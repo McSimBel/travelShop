@@ -1,0 +1,186 @@
+@import "variables";
+@import "buttons";
+
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: Helvetica, Arial, sans-serif;
+}
+h2{
+  text-align: center;
+}
+.main-app-wrap {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+
+  header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color:#fff;
+    background: #f14e4e;
+    opacity: .7;
+  }
+  footer {
+    height: 70px;
+    background: #313b5e;
+    color: #fff;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    opacity: .7;
+  }
+  .main-app {
+    overflow: auto;
+    padding: 10px;
+    flex:1;
+    height: 100%;
+    & .tour-wrap {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      & .tour-pic {
+        width: 100%;
+        height: 140px;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+
+
+      & > div {
+        flex-direction: column;
+        display: flex;
+        width: 260px;
+        height: 400px;
+        padding: 4px;
+        border: 1px solid grey;
+        border-radius: 5px;
+        margin: 4px 4px 30px;
+        transition: all ease-in-out .3s;
+        &:hover {
+          cursor: pointer;
+          scale: 1.01;
+          box-shadow: 1px 3px 5px rgba(0,0,0,.2);
+          transition: all ease-in-out .3s;
+        }
+
+        &>div.ticket-description {
+          padding: 15px 10px 0;
+          flex: 1;
+          height: 155px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+
+}
+.obj-price{
+  font-weight: bold;
+  text-align: end;
+  padding: 0 20px;
+}
+.modal-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: $modal-text-color;
+  background-color: $modal-background;
+  height: 420px;
+  width: 300px;
+  position: fixed;
+  box-shadow: 1px 1px 1px 2px #d7c7c7;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 5px;
+  overflow: hidden;
+
+  & .close-modal {
+    position: absolute;
+    top: 5px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: bold;
+    right: 5px;
+  }
+  & .ticket-submit {
+    margin: 0 auto 10px;
+    display: block;
+    height: 45px;
+    width: 168px;
+    background: darkgray;
+    transition: all ease-in-out .3s;
+  }
+}
+.modal-tour-img{
+  display: block;
+  height: 150px;
+  width: 280px;
+  object-fit: cover;
+  margin: 20px auto 0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.modal-tour-name{
+  text-align: center;
+  font-weight: bold;
+}
+.modal-description{
+  display: block;
+  max-height: 130px;
+  overflow-y: auto;
+}
+.modal-description::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+}
+.modal-description::-webkit-scrollbar-track{
+  background-color: rgba(255,255,255,.6);
+  border-radius: 4px;
+}
+.modal-description::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: rgba(0,0,0,.4);
+  transition: all ease-in-out .3s;
+}
+.modal-description::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,.5);
+  transition: all ease-in-out .3s;
+}
+.buy-ticket{
+  display: block;
+  height: 27px;
+  width: 150px;
+  padding: 9px;
+  text-decoration: none;
+  color: rgba(0,0,0,.8);
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all ease-in-out .3s;
+  text-align: center;
+}
+.close-modal:hover{
+  transform: rotate(90deg);
+  transition: all ease-in-out .3s;
+}
+.buy-ticket:hover{
+  color: rgba(0,0,0,1);
+  transition: all ease-in-out .3s;
+}
+
+.ticket-submit:hover{
+  transform: translateY(-1px);
+  box-shadow: 1px 3px 3px rgba(0,0,0,.2);
+  transition: all ease-in-out .3s;
+}
