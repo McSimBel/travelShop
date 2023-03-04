@@ -34,18 +34,18 @@ function initApp(): void {
 */
 
 function initTicketInfo(ticket: TicketType | IVipTicket) {
-    const targetElement = document.querySelector('.ticket-info');
+    const targetElement: Element = document.querySelector('.ticket-info');
 
-    const ticketDescription = ticket?.description;
-    const ticketOperator = ticket?.tourOperator;
-    let vipClientType;
+    const ticketDescription: string = ticket?.description;
+    const ticketOperator: string = ticket?.tourOperator;
+    let vipClientType: any;
     if ("vipStatus" in ticket) {
         vipClientType = ticket.vipStatus;
     }
 
     const ticketElemsArr: [string, string, string] = [ticketDescription, ticketOperator, vipClientType];
 
-    let ticketElemTemplate;
+    let ticketElemTemplate: any;
 
     ticketElemsArr.forEach((el, i) => {
         ticketElemTemplate+= initTicketElementTemplate(el, i);
@@ -55,9 +55,9 @@ function initTicketInfo(ticket: TicketType | IVipTicket) {
 
 }
 
-function initUserData() {
-const userInfo = document.querySelectorAll('.user-info > p');
-let userInfoObj;
+function initUserData():any {
+const userInfo: NodeListOf<Element> = document.querySelectorAll('.user-info > p');
+let userInfoObj: []
     userInfo.forEach((el) => {
     const inputDataName = el.getAttribute('data-name');
     if (inputDataName) {

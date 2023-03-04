@@ -7,23 +7,23 @@
 import {getTourTemplate} from "../../templates/tours";
 import {openModal} from "@services/modal/modalService";
 
-export function initHeaderTitle(ticketName, selector) {
+export function initHeaderTitle(ticketName: string, selector: string) {
     const headerElement= document.querySelector('header');
-    const targetItem = headerElement.querySelector(selector);
+    const targetItem = <HTMLElement>headerElement.querySelector(selector);
     if (targetItem) {
         targetItem.innerText = ticketName;
     }
 }
 
-export function initFooterTitle(ticketName, selector) {
+export function initFooterTitle(ticketName: string, selector: string) {
     const headerElement = document.querySelector('footer');
-    const targetItem = headerElement.querySelector(selector);
+    const targetItem = <HTMLElement>headerElement.querySelector(selector);
     if (targetItem) {
         targetItem.innerText = ticketName;
     }
 }
 
-export function initToursDivElements(data): void {
+export function initToursDivElements(data: any): void {
 
     if (Array.isArray(data)) {
         const rootElement: Element = document.querySelector('.main-app');
@@ -45,7 +45,7 @@ export function initToursDivElements(data): void {
 }
 
 
-export function initTourElemListener(tourWrap): void {
+export function initTourElemListener(tourWrap: any): void {
     tourWrap.addEventListener('click', (ev) => {
         const targetItem: any = ev.target;
         const parentItem: any = targetItem?.parentNode;

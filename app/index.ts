@@ -17,7 +17,7 @@ initFooterTitle('Туры по всему миру', 'h2');
 const tourData: Promise<ITours[]> = getTours();
 
 
-tourData.then((data): void => {
+tourData.then((data:ITours[]): void => {
   console.log('call')
   toursDataArray = data;
   initApp(data);
